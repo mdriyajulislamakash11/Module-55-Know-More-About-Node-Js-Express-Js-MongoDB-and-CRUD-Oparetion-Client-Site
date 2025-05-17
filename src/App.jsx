@@ -25,9 +25,11 @@ function App() {
      .then(data => {
       // users 
       console.log(data)
-
-      // reset form
-      form.reset()
+      if(data.insertedId){
+        alert("user added successfully")
+        // reset form
+        form.reset()
+      }
      })
 
 
