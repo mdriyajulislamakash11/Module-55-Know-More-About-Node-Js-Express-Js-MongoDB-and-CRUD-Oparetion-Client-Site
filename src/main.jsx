@@ -3,11 +3,17 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import Users from "./components/Users";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App />,
+  },
+  {
+    path: "/users",
+    element: <Users />,
+    loader: () => fetch("http://localhost:5000/users")
   },
 ]);
 
