@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
+  const navigate = useNavigate()
 
 
   const handleFormSubmit = (event) => {
@@ -48,6 +50,8 @@ function App() {
         <br />
         <button type="submit">Submit</button>
       </form>
+
+      <button onClick={() => navigate("/users")}>Users</button>
     </>
   );
 }
