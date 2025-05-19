@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 
 const Update = () => {
   const navigate = useNavigate()
+  const navigate2 = useNavigate()
   const lodedUsers = useLoaderData();
   const { _id, name, email } = lodedUsers || {};
 
@@ -27,6 +28,8 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        navigate2("/users")
+        form.reset()
       });
   };
 
