@@ -1,7 +1,8 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const Update = () => {
+  const navigate = useNavigate()
   const lodedUsers = useLoaderData();
   const { _id, name, email } = lodedUsers || {};
 
@@ -40,6 +41,8 @@ const Update = () => {
         <br />
         <button type="submit">Update</button>
       </form>
+
+      <button onClick={() => navigate("/users")}>Users</button>
     </div>
   );
 };
